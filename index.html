@@ -10,20 +10,28 @@
 </head>
 <body>
     <div class="container main-content">
-        <div class="main-content__left-part timer-part">
-            <button class="timer-part__btn btn-timer btn-timer_2" date-time="120">2 Минуты</button>
-            <button class="timer-part__btn btn-timer btn-timer_5" date-time="300">5 Минут</button>
-            <button class="timer-part__btn btn-timer btn-timer_10" date-time="600">10 Минут</button>
+
+        <div class="main-content__video-container video-container">
+            <video class="video-container__content video-bg" loop>
+                <source src="./video/rain.mp4" type="video/mp4" />
+            </video>
         </div>
 
-        <div class="main-content__player-part player-part">
+        <div class="main-content__left-part timer-part">
+            <button class="timer-part__btn btn-timer btn-timer_2" data-time="120">2 Минуты</button>
+            <button class="timer-part__btn btn-timer btn-timer_5" data-time="300">5 Минут</button>
+            <button class="timer-part__btn btn-timer btn-timer_10" data-time="600">10 Минут</button>
+        </div>
+
+        <div class="main-content__central-part player-part">
             <audio class="player-part__song">
                 <source src="./sounds/rain.mp3" />
             </audio>
+
             <img class="player-part__play-btn play-btn" src="svg/play.svg" alt="Play button">
 
             <svg 
-            class="player-part__track-outline"
+            class="player-part__track-outline player-part__outline"
             width="453" 
             height="453" 
             viewBox="0 0 453 453" 
@@ -39,7 +47,7 @@
             </svg>
 
             <svg 
-            class="player-part__moving-outline"
+            class="player-part__moving-outline player-part__outline"
             width="453" 
             height="453" 
             viewBox="0 0 453 453" 
@@ -54,13 +62,17 @@
                 stroke-width="20"/>
             </svg>
 
+            <div class="player-part__time-panel time-panel">0:00</div>
 
 
-            <div class="timer-panel"></div>
         </div>
-        <div class="right-part">
-            <button class="btn-sound-type"></button>
-            <button class="btn-sound-type"></button>
+        <div class="main-content__right-part sound-part">
+            <button class="sound-part__btn btn-sound-type sound-type_rain" data-sound="./sounds/rain.mp3" data-video="./video/rain.mp4">
+                <img class="btn-sound-type__img" src="./svg/rain.svg" alt="Rain icon">
+            </button>
+            <button class="sound-part__btn btn-sound-type sound-type_beach" data-sound="./sounds/beach.mp3" data-video="./video/beach.mp4">
+                <img class="btn-sound-type__img" src="./svg/beach.svg" alt="Beach icon">
+            </button>
         </div>
     </div>
     <script src=""></script>
