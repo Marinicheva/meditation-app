@@ -7,10 +7,10 @@ body {
 
 .container {
     display: flex;
-    justify-content: space-around;
-    margin: 100px auto;
-    max-width: 960px;
-    height: 60vh;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+    
 }
 
 /*Timers*/
@@ -18,11 +18,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    min-width: 30%;
-    height: auto;
 }
 
-.timer-part_btn {
+.timer-part__btn {
     display: block;
     margin: 0 auto;
     margin-bottom: 80px;
@@ -36,15 +34,9 @@ body {
     border-radius: 5px;
 }
 
-.timer-part_btn:last-child {
+.timer-part__btn:last-child {
     margin-bottom: 0;
 }
 
 /*Play part*/
 
-.btn-play {
-    background-image: url('../svg/play.svg');
-    background-position: center center;
-    background-size: cover;
-    
-}
