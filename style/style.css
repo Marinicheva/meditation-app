@@ -1,3 +1,7 @@
+body {
+    background-color: lightcoral;
+}
+
 .container {
     display: flex;
     justify-content: space-evenly;
@@ -65,6 +69,16 @@
     height: 50%;
     pointer-events: none;
 }
+
+.player-part-btn {
+    cursor: pointer;
+}
+
+.player-part-btn_hide {
+    display: none;
+}
+
+
 
 .time-panel {
     position: absolute;
