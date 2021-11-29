@@ -12,7 +12,7 @@
     <div class="container main-content">
 
         <div class="main-content__video-container video-container">
-            <video class="video-container__content video-bg" loop>
+            <video class="video-container__content video-bg" id="video-bg" loop>
                 <source src="./video/rain.mp4" type="video/mp4" />
             </video>
         </div>
@@ -33,7 +33,7 @@
             
             <img class="player-part__play-btn player-part-btn play-btn" src="svg/play.svg" alt="Play button" id="play-btn">
             <img class="player-part__pause-btn player-part-btn pause-btn player-part-btn_hide" src="svg/pause.svg" alt="Pause button" id="pause-btn">
-
+            <!--Рассмотреть вариант с тем, чтобы сделать в верстке одну кнопку с атрибутами data-play и data-pause, где будут храниться значения атрибута src-->
             <svg 
             class="player-part__track-outline player-part__outline"
             width="453" 
@@ -51,17 +51,11 @@
             </svg>
 
             <div class="player-part__time-panel time-panel" id="time-panel">00:00</div>
-
-
         </div>
 
         <div class="main-content__right-part sound-part">
-            <button class="sound-part__btn btn-sound-type sound-type_rain" data-sound="./sounds/rain.mp3" data-video="./video/rain.mp4">
-                <img class="btn-sound-type__img" src="./svg/rain.svg" alt="Rain icon">
-            </button>
-            <button class="sound-part__btn btn-sound-type sound-type_beach" data-sound="./sounds/beach.mp3" data-video="./video/beach.mp4">
-                <img class="btn-sound-type__img" src="./svg/beach.svg" alt="Beach icon">
-            </button>
+            <button class="sound-part__btn btn-sound-type sound-type_rain" data-sound="./sounds/rain.mp3" data-video="./video/rain.mp4"></button>
+            <button class="sound-part__btn btn-sound-type sound-type_beach" data-sound="./sounds/beach.mp3" data-video="./video/beach.mp4"></button>
         </div>
     </div>
     <script src="scripts/main-script.js"></script>

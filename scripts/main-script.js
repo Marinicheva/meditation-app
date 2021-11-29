@@ -5,8 +5,10 @@ const pauseBtn = document.querySelector('#pause-btn');
 const timerButtons = document.querySelector('#timer-buttons');
 const timerPanel = document.querySelector('#time-panel');
 const song = document.querySelector('#song');
+const video = document.querySelector('#video-bg');
+const soundTypeBtns = document.querySelectorAll('.btn-sound-type');
 
-let time = 10;
+let time = 0;
 let timerID;
 
 timerButtons.addEventListener('click', event => {
@@ -22,37 +24,40 @@ timerButtons.addEventListener('click', event => {
             timerPanel.innerHTML = `0${Math.floor(time / 60)}:${time % 60}`;
         }
     }
-
 });
 
 player.addEventListener('click', () => {
     playMeditation();    
 });
 
+soundTypeBtns.forEach(btn => {
+    btn.addEventListener('click', event => {
+        let soundAttr = event.target.getAttribute('data-sound');
+        let videoAttr = event.target.getAttribute('data-video');
+        song.setAttribute('src', soundAttr);
+        video.setAttribute('src', videoAttr);
+        checkPlaying();
+    });
+});
+
+
 function playMeditation () {
     playBtn.classList.toggle('player-part-btn_hide');
     pauseBtn.classList.toggle('player-part-btn_hide');
-    timerStart();
-    timerStop();
-
+    timerWork();
 }
 
-function timerStart() {
+function timerWork() {
     if(playBtn.classList.contains('player-part-btn_hide')) {
         timerID = setInterval(decreaseTime, 1000);
-    }
-    song.play();
-}
-
-function timerStop() {
-    if (pauseBtn.classList.contains('player-part-btn_hide')) {
+        song.play();
+        video.play();
+    } else {
         clearInterval(timerID);
-        if (song.played) {
-            song.pause();
-        }
+        song.pause();
+        video.pause();
     }
 }
-
 
 function decreaseTime() {
     let currentTime = --time;
@@ -74,10 +79,21 @@ function decreaseTime() {
     }
 }
 
-
+function checkPlaying() {
+    if (song.paused) {
+        song.play();
+        video.play();
+        play.src = "./svg/pause.svg";
+      } else {
+        song.pause();
+        video.pause();
+        play.src = "./svg/play.svg";
+      }
+}
 
 function stopPlay() {
     song.pause();
-    timerPanel.innerHTML = '00:00';//For test
+    video.pause();
+    timerPanel.innerHTML = '00:00';
 }
 
