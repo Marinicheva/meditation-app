@@ -1,4 +1,3 @@
-/*jshint esversion: 6 */
 const player = document.querySelector('.player-part');
 const playBtn = document.querySelector('#play-btn');
 const pauseBtn = document.querySelector('#pause-btn');
@@ -8,7 +7,7 @@ const song = document.querySelector('#song');
 const video = document.querySelector('#video-bg');
 const soundTypeBtns = document.querySelectorAll('.btn-sound-type');
 
-let time = 0;
+let time = 60;
 let timerID;
 
 timerButtons.addEventListener('click', event => {
@@ -83,11 +82,11 @@ function checkPlaying() {
     if (song.paused) {
         song.play();
         video.play();
-        play.src = "./svg/pause.svg";
+        // play.src = "./svg/pause.svg";
       } else {
         song.pause();
         video.pause();
-        play.src = "./svg/play.svg";
+        // play.src = "./svg/play.svg";
       }
 }
 
